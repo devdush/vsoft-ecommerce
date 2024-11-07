@@ -29,6 +29,7 @@ import CreateCategory from "./pages/admin-view/create-category";
 import UpdateCategory from "./pages/admin-view/update-category";
 import CreateProducts from "./pages/admin-view/create-products";
 import UpdateProducts from "./pages/admin-view/update-products";
+import FromERP from "./pages/admin-view/products-from-erp";
 
 function App() {
   const { user, isAuthenticated, isLoading } = useSelector(
@@ -39,8 +40,8 @@ function App() {
   useEffect(() => {
     dispatch(CheckUserAuth());
   }, [dispatch]);
-  console.log(isLoading, user);
- if (isLoading) return <div>Loading...</div>;
+
+ //if (isLoading) return <div>Loading...</div>;
 
   return (
     <div className="App">
@@ -75,6 +76,7 @@ function App() {
           <Route path="category-update" element={<UpdateCategory />} />
           <Route path="product-create" element={<CreateProducts />} />
           <Route path="product-update" element={<UpdateProducts />} />
+          <Route path="erp-products" element={<FromERP />} />
         </Route>
         <Route
           path="/shop"
